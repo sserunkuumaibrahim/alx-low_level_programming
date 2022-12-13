@@ -1,21 +1,20 @@
-#include <stdio.h>
-#include <_putchar.h>
-#include <main.h>
+#include <unistd.h>
+#include "main.h"
+
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * main - Check description
+ * Description: it prints the word _putchar, followed by a new line
+ * Return: ALways 0
  */
 int main(void)
 {
-	char *sh = "_putchar";
 
-	while (*sh)
-	{
-		_putchar(*sh);
-		sh++;
-	}
+	char word[8] = "_putchar";
+	int i;
+
+	for (i = 0; i < 8; i++)
+		_putchar(word[i]);
 	_putchar('\n');
 
-	retun (0);
-}
+	return (0);
+	}
