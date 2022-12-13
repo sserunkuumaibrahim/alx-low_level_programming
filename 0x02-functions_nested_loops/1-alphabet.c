@@ -2,7 +2,6 @@
 /**
  * print_alphabet - Prints alphabets 'a - z'
  */
-
 void print_alphabet(void)
 {
 	char c;
