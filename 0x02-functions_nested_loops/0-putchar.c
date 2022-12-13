@@ -8,14 +8,14 @@
 
 int main(void)
 {
-	int i = 0;
-	char name_of_school[] = "_putchar";
+	char *sh = "_putchar";
 
-	while (i < 9)
+	while (*sh)
 	{
-		_putchar(name_of_school[i]);
-		i++;
+		_putchar(*sh);
+		sh++;
 	}
 	_putchar('\n');
+
 	return (0);
 }
