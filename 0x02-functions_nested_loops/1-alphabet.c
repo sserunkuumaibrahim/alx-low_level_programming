@@ -1,5 +1,4 @@
 #include main.h
-
 /**
  * print_alphabet - Prints alphabets 'a - z'
  */
