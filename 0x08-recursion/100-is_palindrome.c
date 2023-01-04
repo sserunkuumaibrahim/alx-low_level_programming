@@ -1,17 +1,51 @@
 #include "main.h"
 /**
- * is_palindrome - find a palindrome string
- * @s: string for check
- *
- * Return: 1 if is palindrome, otherwise 0
+ * lenght - Find the legnth of a srting.
+ * @s: String.
+ * Return: The lenght of the string.1
  */
+int lenght(char *s)
+{
+	if (*s)
+	{
+		return (1 + lenght(s + 1));
+	}
+
+	return (0);
+}
+
+/**
+  * function - Have the condition to define if it is a palindrome.
+  * @s: String.
+  * @len: Lenght of the string.
+  * @count: Counter of the function.
+  * Return: 1 if it is a palindrome and 0 if it doesn't.
+  */
+int function(char *s, int len, int count)
+{
+	if (count > len)
+	{
+		return (1);
+	}
+	else if (*(s + count) == *(s + len))
+	{
+		return (function(s, len - 1, count + 1));
+	}
+	else
+	{
+		return (0);
+	}
+}
+
+/**
+  * is_palindrome - Answer if the string is a palindrome.
+  * @s: String.
+  * Return: 1 if it is palindrome and 0 if it doesn't.
+  */
 int is_palindrome(char *s)
 {
-	int i;
+	int len = lenght(s) - 1;
+	int count = 0;
 
-	i = 0;
-
-	if (*s == i)
-		return (0);
-	return (1);
+	return (function(s, len, count));
 }
