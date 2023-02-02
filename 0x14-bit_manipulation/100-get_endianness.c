@@ -1,14 +1,12 @@
 #include "main.h"
 /**
- * get_endianness - defines if a pc is big or little endianness.
- * Return: 0 big 1 little
+ * get_endianness - determine the endianness of the OS
+ *
+ * Return: 0 if big endian, 1 if little endian
  */
 int get_endianness(void)
 {
-	int i = 1;
+	unsigned int n = 1;
 
-	if ((i >> 31) == 1)
-		return (0);
-	else
-		return (1);
+	return (*(char *)(&n) == 1);
 }
