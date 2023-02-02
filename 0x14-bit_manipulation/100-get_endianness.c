@@ -1,13 +1,12 @@
 #include "main.h"
-
 /**
- * get_endianness - checks the endianness.
- * Return: 0 if big endian, 1 if little endian.
+ * get_endianness - determine the endianness of the OS
+ *
+ * Return: 0 if big endian, 1 if little endian
  */
 int get_endianness(void)
 {
-	unsigned int x = 1;
+	unsigned int n = 1;
 
-	/* honestly idk, check: https://stackoverflow.com/questions/12791864 */
-	return ((int) (((char *)&x)[0]));
+	return (*(char *)(&n) == 1);
 }
